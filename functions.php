@@ -1,13 +1,16 @@
 <?php
   
-  $dbhost  = 'localhost';    // Unlikely to require changing
-  $dbname  = 'socialmedia';   // Modify these...
-  $dbuser  = 'root';   // ...variables according
-  $dbpass  = 'mysql';   // ...to your installation
-  $appname = "Social Media"; // ...and preference
+define("DB_SERVER", "localhost");
+define("DB_USER", "root");
+define("DB_PASSWORD", "");
+define("DB_DATABASE", "SOCIAL_MEDIA_WEB");
 
-  $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+$connection = mysqli_connect(DB_SERVER , DB_USER, DB_PASSWORD, DB_DATABASE);
+
+
   if ($connection->connect_error) die($connection->connect_error);
+
+
 
   function queryMysql($query)
   {
